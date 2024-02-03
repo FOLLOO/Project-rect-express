@@ -6,7 +6,7 @@ function ButtonLogIn()
 {
  const navigate = useNavigate()
  return (
-  <button className='buttonLogIn' onClick={() => navigate('/login')} >ВОЙТИ</button>
+  <button className='buttonLogIn media-button' onClick={() => navigate('/login')} >ВОЙТИ</button>
  )
 }
 

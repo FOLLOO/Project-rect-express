@@ -39,16 +39,20 @@ const onClickEdit = () => {
 
   const dateT = new Date(dateStart);
   const dateD = new Date(dateEnd);
-  console.log(dateEnd);
   const formateDate = new Intl.DateTimeFormat('ru-RU').format(dateT);
   const formattedDateEnd = moment(dateD, 'DD.MM.YYYY').format('YYYY-MM-DD');
 
-  let parsedBlocks = "";
+  let parsedBlocks = null;
 
   try {
     const blocksData = JSON.parse(description);
     if (blocksData.blocks && blocksData.blocks.length > 0) {
-      parsedBlocks = blocksData.blocks.map(block => block.text).join(' ');
+      const text = blocksData.blocks[0].text;
+      const paragraphs = text.split('\n');
+  
+      parsedBlocks = paragraphs.map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ));
     }
   } catch (error) {
     console.log("Error parsing JSON:", error);
@@ -57,7 +61,7 @@ const onClickEdit = () => {
 return(
   <>
   <div className="item-dark-bg">
-          <h1 style={{color: "white"}}>{title}</h1>
+          <h1 style={{color: "white" }}>{title}</h1>
           <ButtonBack/>
           </div>
           <div className="item-dark-bg">
@@ -65,19 +69,15 @@ return(
             <h2>{formateDate }</h2>
            <h2>Дата конца</h2>
            <h2>{formattedDateEnd}</h2>
-           <h2>Статус</h2>
           <ButtonStatus/>
           </div>
-          <div className="item-dark-bg">
-          {/* <Editor
-              toolbarHidden
-              wrapperClassName="wrapper-class"
-              editorClassName="editor-class"
-              toolbarClassName="toolbar-class"
-          /> */}
-          {/* <Editor editorState={description} readOnly={true}/> */}
-          <p style={{color: "white", fontSize: "24px"}}>{parsedBlocks}</p>
-          </div>
+              <div className="item-dark-bg">
+                  {parsedBlocks && (
+                  <div style={{ color: "white", fontSize: "24px"}}>
+                    {parsedBlocks}
+                  </div>
+                  )}
+              </div>
           <div className="item-dark-bg">
           <button className='button-delete' onClick={onClickRemove }>УДАЛИТЬ</button>
           <button className='button-edit' onClick={onClickEdit }>РЕДАКТИРОВАТЬ</button>

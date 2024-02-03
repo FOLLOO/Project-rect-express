@@ -5,7 +5,7 @@ function ButtonMytasks()
 {
  const navigate = useNavigate()
  return (
-  <button className='button-my-tasks' onClick={() => navigate('/tasks')}>МОИ ЗАДАЧИ</button>
+  <button className='button-my-tasks media-button' onClick={() => navigate('/tasks')}>МОИ ЗАДАЧИ</button>
  )
 }
 

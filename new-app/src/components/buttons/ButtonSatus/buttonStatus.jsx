@@ -4,7 +4,10 @@ import './buttonStatus.css';
 function ButtonSatus()
 {
  return (
-  <button className='buttonStatus'>Выполнено</button>
+  <>
+  <h4 className='status-h4'>Статус:</h4>
+  <button className='buttonStatus media-button'>Выполнено</button>
+  </>
  )
 }
 

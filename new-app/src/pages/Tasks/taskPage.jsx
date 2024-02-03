@@ -20,12 +20,18 @@ import { useSelector } from "react-redux";
 import { SelectIsAuth } from "../../redux/slice/auth";
 
 function TaskPage() {
+
   const isAuth = useSelector(SelectIsAuth);
+
   const [data, setData] = React.useState([]);
+
   const [loading, setLoading] = useState(false)
+
   const { id } = useParams();
-  const params = useParams();
-  console.log(params);
+
+
+
+  
   
   React.useEffect(() => {
     axios
@@ -48,11 +54,10 @@ function TaskPage() {
 
   return (
     <div className="page">
-      <Navigation/>
+      <Navigation />
       <Time styles={{ marginLeft: "2%", marginTop: "5%" }} />
       <Week styles={{ marginLeft: "55%", marginTop: "1%" }}/>
       <Month/>
-
       <div className="content">
         <div className="glasses-background">
           <Task 

@@ -4,7 +4,7 @@ function ButtonSignIn()
 {
 
  return (
-  <button className='button-signIn' type='submit'>ЗАРЕГЕСТИРОВАТЬСЯ</button>
+  <button className='button-signIn media-button' type='submit'>ЗАРЕГЕСТИРОВАТЬСЯ</button>
  )
 }
 

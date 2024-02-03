@@ -28,6 +28,17 @@
   font-size: 1rem !important;
 }
 
+@media (max-width: 1650px){
+  .container-d{
+    font-size: 22px;
+  }
+  .css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label{
+    font-size: 18px;
+  }
+  .css-e784if-MuiTypography-root{
+    font-size: 0rem !important;
+  }
+}
 
 
 

@@ -14,7 +14,7 @@ import ButtonMytasks from '../buttons/ButtonMyTasks/buttonMyTasks.jsx';
 
 
 
-function Navigation()
+function Navigation({value, onChange})
 {
   const dispatch = useDispatch();
   const isAuth = useSelector(SelectIsAuth);
@@ -26,6 +26,9 @@ function Navigation()
       window.localStorage.removeItem('token');
     }
   }
+
+    
+
 
     return (
       <nav>
@@ -40,6 +43,8 @@ function Navigation()
             className='text-box'
             type={"text"} 
             placeholder={'Поиск'}
+            value={value}
+            onChange={onChange}
             ></input>
       <ButtonMytasks/>
       <button className='buttonLogOut' onClick={onClickLogOut} >ВЫЙТИ</button>

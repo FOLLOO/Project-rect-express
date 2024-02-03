@@ -5,7 +5,7 @@ function ButtonBack()
 {
   const navigate = useNavigate();
  return (
-  <button className='button-back' onClick={() => navigate(-1)}>НАЗАД</button>
+  <button className='media-button button-back' onClick={() => navigate(-1)}>НАЗАД</button>
  )
 }
 

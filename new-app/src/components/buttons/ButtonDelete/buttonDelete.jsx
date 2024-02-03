@@ -4,7 +4,7 @@ import './buttonDelete.css';
 function ButtonDelete()
 {
  return (
-  <button className='button-delete'>УДАЛИТЬ</button>
+  <button className='button-delete media-button'>УДАЛИТЬ</button>
  )
 }
 

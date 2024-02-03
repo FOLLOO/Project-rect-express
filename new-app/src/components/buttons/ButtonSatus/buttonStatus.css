@@ -17,4 +17,23 @@
 }
 
 
+.status-h4{
+  margin: 0;
+  overflow: hidden;
+  font-size: 28px;
+color: white;
+}
+
+@media (max-width: 1650px){
+  .status-h4{
+    font-size: 20px;
+  }
+  .buttonStatus{
+    height: 33px;
+    font-size: 22px;
+  }
+}
+
+
+
 

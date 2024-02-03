@@ -4,7 +4,7 @@ import './buttonSave.css';
 function ButtonSave()
 {
  return (
-  <button className='buttonSave'>Сохранить</button>
+  <button className='buttonSave media-button'>Сохранить</button>
  )
 }
 

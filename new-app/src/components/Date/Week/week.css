@@ -16,3 +16,10 @@
   margin-left: 60%;
   margin-top: 5%;
 }
+
+
+@media (max-width: 1650px){
+  .week p {
+    font-size: 84px;
+  }
+}

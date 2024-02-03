@@ -17,3 +17,9 @@
   margin-top: 40%;
   
 }
+
+@media (max-width: 1650px){
+  .month p {
+    font-size: 84px;
+  }
+}

@@ -16,3 +16,14 @@
   border-color: none;
 }
 
+
+@media (max-width: 1650px){
+  .button-create {
+    font-size: 20px;
+  width: 350px;
+    height: 35px;
+    padding: 6px;
+
+  }
+}
+

@@ -6,7 +6,7 @@ function ButtonSignIn()
   const navigate = useNavigate();
 
  return (
-  <button className='button-signIn'  onClick={() => navigate("/registration")}>ЗАРЕГЕСТИРОВАТЬСЯ</button>
+  <button className='button-signIn media-button'  onClick={() => navigate("/registration")}>ЗАРЕГЕСТИРОВАТЬСЯ</button>
  )
 }
 

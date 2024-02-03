@@ -4,7 +4,7 @@ import './buttonLogInDark.css';
 function ButtonLogInDark()
 {
  return (
-  <button className='button-login-dark' type='submit' >ВОЙТИ</button>
+  <button className='button-login-dark media-button' type='submit' >ВОЙТИ</button>
  )
 }
 

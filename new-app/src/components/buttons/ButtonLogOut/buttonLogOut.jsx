@@ -16,7 +16,7 @@ function ButtonLogOut()
     }
   }
  return (
-  <button className='buttonLogOut' onClick={onClickLogOut} >ВЫЙТИ</button>
+  <button className='buttonLogOut media-button' onClick={onClickLogOut} >ВЫЙТИ</button>
  )
 }
 

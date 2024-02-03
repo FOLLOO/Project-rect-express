@@ -16,3 +16,9 @@
   margin-left: 65%;
   margin-top: 20%;
 }
+
+@media (max-width: 1650px){
+  .time p {
+    font-size: 90px;
+  }
+}

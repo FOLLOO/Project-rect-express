@@ -5,7 +5,7 @@ function ButtonCreate()
 {
   const navigate = useNavigate();
  return (
-  <button className='button-create' onClick={() => navigate("/add-task")}>ДОБАВИТЬ</button>
+  <button className='button-create media-button' onClick={() => navigate("/add-task")}>ДОБАВИТЬ</button>
  )
 }
 

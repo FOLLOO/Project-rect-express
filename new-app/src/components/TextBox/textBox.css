@@ -13,4 +13,13 @@
   font-family: Comfortaa;
 }
 
+@media (max-width: 1650px){
+  .text-box{
+    font-size: 24px;
+    min-width: 350px;
+    height: 55px;
+  }
+}
+
+
 

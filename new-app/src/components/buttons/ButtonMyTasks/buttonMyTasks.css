@@ -16,3 +16,9 @@
   border: none;
   color: #383838;
 }
+
+@media (max-width: 1650px){
+  .media-button{
+    font-size: 24px;
+  }
+}

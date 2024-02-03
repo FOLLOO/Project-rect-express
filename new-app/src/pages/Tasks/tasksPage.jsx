@@ -27,6 +27,8 @@ function TasksPage(){
   const { tasks } = useSelector(state => state.tasks)
   const isTasksLoading = tasks.status === 'loading';
   const userData = useSelector((state) => state.auth.data)
+  const [data, setData] = React.useState([]);
+
 
 
 
@@ -48,9 +50,12 @@ function TasksPage(){
     ? [...Array(tasksPerPage)]
     : filteredTasks.slice(startIndex, endIndex);
 
-    console.log(filteredTasks);
     
+    const [value, setValue] = useState('');
 
+    const filterTasks = filteredTasks.filter(items => 
+      items.title.toLowerCase().includes(value.toLowerCase())
+      );
     
     if(!window.localStorage.getItem("token") && !isAuth){
       return <Navigate to="/"/>
@@ -59,17 +64,20 @@ function TasksPage(){
   return (
     <div className="page">
       {/* должна быть кнопка ВЫЙТИ ПОИСК ПРОФИЛЬ */}
-      <Navigation/> 
+      <Navigation  
+      value={value}
+      onChange={(event) => setValue(event.target.value)}
+      /> 
       <Time styles={{ marginLeft: "2%", marginTop: "5%" }} />
       <Week/>
       <Month/>
       <div className="content ">
       <div className="glasses-background">
 
-       <h4 style={{color: "#fff", fontSize: "48px", margin: 0}}>Мои Задачи</h4>
+       <h4 className="glasses-h4" >Мои Задачи</h4>
         {/* Тут должен быть фильтер */}
         <FFilter/>
-         {displayedTasks.map((obj, index) => (
+         {filterTasks.map((obj, index) => (
           userData && obj && userData._id === (obj?.user?._id || null)) && (
             <TaskItemToButton key={index} _id={obj?._id}>
               <TaskItem

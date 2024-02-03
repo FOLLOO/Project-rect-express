@@ -14,7 +14,7 @@
 
 .task-item-title{
   font-size: 28px;
-  width: 4em;
+  width: 18em;
   overflow: hidden;
   height: 1em;
   overflow: hidden;
@@ -31,4 +31,16 @@
   height: 1em;
   overflow: hidden;
   text-align: left;
+}
+
+
+@media (max-width: 1650px){
+  .task-item-title{
+    width: 9em;
+    font-size: 20px;
+
+  }
+  .task-item{
+    font-size: 20px;
+  }
 }

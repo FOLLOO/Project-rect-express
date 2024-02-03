@@ -5,7 +5,7 @@ function ButtonAlsoSign()
 {
   const navigate = useNavigate();
  return (
-  <button className='button-also-sign' onClick={() => navigate("/login")}>УЖЕ ЕСТЬ АККАУНТ?</button>
+  <button className='media-button button-also-sign' onClick={() => navigate("/login")}>УЖЕ ЕСТЬ АККАУНТ?</button>
  )
 }
 

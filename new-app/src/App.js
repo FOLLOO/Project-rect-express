@@ -39,6 +39,7 @@ React.useEffect(() => {
           <Route path="/tasks" element={<TasksPage/>}/>
           <Route path="/add-task" element={<TaskPageAdd/>}/>
           <Route path="/task/:id" element={<TaskPage/>}/>
+          <Route path="/task/:id/edit" element={<TaskPageAdd/>}/>
         </Routes>
       </header>
     </div>

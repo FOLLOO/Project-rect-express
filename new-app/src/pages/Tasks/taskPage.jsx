@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useCallback} from 'react';
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 import Footer from "../../components/Footer/footer";
 import Navigation from "../../components/Navigation/navigation";
@@ -16,8 +16,11 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import Month from "../../components/Date/Month/month";
 import axios from "axios";
 import Task from "../../components/Task/task";
+import { useSelector } from "react-redux";
+import { SelectIsAuth } from "../../redux/slice/auth";
 
 function TaskPage() {
+  const isAuth = useSelector(SelectIsAuth);
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = useState(false)
   const { id } = useParams();
@@ -34,6 +37,10 @@ function TaskPage() {
       console.log('Error to take task from DB', err.response?.data || err.message)
     });
   }, []);
+
+  if (!window.localStorage.getItem("token") && !isAuth){
+    return <Navigate to="/"/>
+  }
 
   if (loading) {
     return <p>Data is loading...</p>;

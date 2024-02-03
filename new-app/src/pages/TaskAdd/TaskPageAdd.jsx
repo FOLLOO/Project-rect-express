@@ -13,7 +13,7 @@ import Week from "../../components/Date/Week/week";
 import './TaskPageAdd.css'
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
-import { EditorState , convertToRaw, ContentState } from 'draft-js';
+import { EditorState , convertToRaw,convertFromRaw ,ContentState } from 'draft-js';
 import { Editor  } from "react-draft-wysiwyg";
 import { TextField } from "@mui/material";
 
@@ -23,19 +23,21 @@ import { DatePicker } from "@mui/x-date-pickers";
 import Month from "../../components/Date/Month/month";
 import { useSelector } from "react-redux";
 import { SelectIsAuth } from "../../redux/slice/auth";
-import { useNavigate , Navigate } from "react-router-dom";
+import { useNavigate , Navigate, useParams } from "react-router-dom";
 import dayjs from "dayjs";
 import axios from "axios";
 
 function TaskPageAdd() {
-
+  const {id} = useParams();
   const isAuth = useSelector(SelectIsAuth);
   const navigate = useNavigate();
   const [description, setDescription] = React.useState('');
   const [title, setTitle] = React.useState('');
   const [dateEnd, setdateEnd] = React.useState();
+  const [status, setStatus] = React.useState();
   const [isLoading, setLoading] = React.useState(false)
 
+  const isEdititng = Boolean(id);
 
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
@@ -46,18 +48,41 @@ function TaskPageAdd() {
       const fields = {
         title, 
         description: JSON.stringify(convertToRaw(editorState.getCurrentContent())),
-        dateEnd: moment(dateEnd, 'DD.MM.YYYY').format('YYYY-MM-DD'),
+        dateEnd: dayjs(dateEnd, 'DD.MM.YYYY').format('YYYY-MM-DD'),
       }
-      const { data } = await axios.post('/task', fields);
-      
-      const id = data._id;
 
-      navigate(`/task/${id}`)
+      const { data } = isEdititng 
+      ? await axios.patch(`/task/${id}`, fields)
+      : await axios.post('/task', fields);
+      
+      const _id = isEdititng ? id : data._id;
+
+      navigate(`/task/${_id}`)
     } catch(err) {
       console.warn(err);
       alert('Ошибка при создании статьи')
     }
   }
+  let parsedBlocks = "";
+  React.useEffect(() => {
+    if(id) {
+      axios.get(`/task/${id}`)
+      .then(({data}) => {
+        setTitle(data.title);
+        setDescription(data.description)
+        setdateEnd(dayjs(data.dateEnd || Date.now()));
+        setStatus(data.status)
+
+        const contentState = convertFromRaw(JSON.parse(data.description));
+        // Установка нового editorState
+        const newEditorState = EditorState.createWithContent(contentState);
+        setEditorState(newEditorState);
+      }).catch(err => {
+        console.warn(err);
+        alert('Ошибка пир получении статьи')
+      })
+    }
+  }, [])
 
   if (!window.localStorage.getItem("token") && !isAuth){
    return <Navigate to="/"/>
@@ -124,7 +149,9 @@ function TaskPageAdd() {
           </div>
           <div className="item-dark-bg">
             <span/>
-            <button className='buttonSave' onClick={onSubmit} >Сохранить</button>
+            <button className='buttonSave' onClick={onSubmit}>
+              {isEdititng ? "СОХРАНИТЬ" : "СОЗАДТЬ" }
+              </button>
           </div>
 
         </div>

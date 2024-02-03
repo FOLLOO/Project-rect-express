@@ -32,6 +32,9 @@ const onClickRemove = () => {
   }
 
 }
+const onClickEdit = () => {
+      navigate(`/task/${_id}/edit`)
+}
 
 
   const dateT = new Date(dateStart);
@@ -77,7 +80,7 @@ return(
           </div>
           <div className="item-dark-bg">
           <button className='button-delete' onClick={onClickRemove }>УДАЛИТЬ</button>
-          <ButtonEdit/>
+          <button className='button-edit' onClick={onClickEdit }>РЕДАКТИРОВАТЬ</button>
           </div>
     </>
 )

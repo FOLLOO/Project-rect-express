@@ -1,0 +1,18 @@
+.week p {
+  font-size: 128px;
+  color: rgba(0, 0, 139, 0);
+  font-weight: 700;
+  margin: 0;
+  -webkit-text-stroke : 1px rgba(255, 255, 255, 0.726);
+  text-shadow: -10px 10px 1px #057a478c;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.week{
+  position: absolute;
+  /* z-index: 10; */
+  margin-left: 60%;
+  margin-top: 5%;
+}

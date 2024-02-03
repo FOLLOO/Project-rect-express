@@ -1,0 +1,18 @@
+footer{
+  display: flex;
+height: 100px;
+padding: 10px;
+justify-content: center;
+align-items: center;
+align-content: center;
+gap: 50px;
+flex-shrink: 0;
+flex-wrap: wrap;
+border-radius: 40px;
+background: #191818;
+
+}
+
+footer a {
+  color: white;
+}

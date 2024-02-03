@@ -1,0 +1,18 @@
+.button-create {
+  border-radius: 60px;
+  border: 1px solid #057A47;
+  padding: 12px;
+  font-size: 32px;
+  width: 500px;
+  height: 65px;
+  transition: background 0.25s;
+  background: none;
+  margin-top: 5vh;
+}
+
+.button-create:hover{
+  background: #057a473a;
+  border: none;
+  border-color: none;
+}
+

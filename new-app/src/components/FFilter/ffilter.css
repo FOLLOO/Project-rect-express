@@ -1,0 +1,33 @@
+.container-d{
+  color: white;
+  display: flex;
+  font-size: 28px;
+  align-items: center;
+  justify-content: space-around;
+  width: -webkit-fill-available;
+  background-color: #1F1F1F;
+  margin: 30px 0 20px 0;
+  border-radius: 60px;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+  border-color: white !important;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+  color: white !important;
+}
+.css-ve4m59-MuiFormLabel-root{
+  color: white !important;
+  font-family: 'Comfortaa' !important;
+}
+.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label{
+  font-family: 'Comfortaa' !important;
+  font-size: 24px;
+}
+.css-e784if-MuiTypography-root{
+  font-family: 'Comfortaa' !important;
+  font-size: 1rem !important;
+}
+
+
+
+

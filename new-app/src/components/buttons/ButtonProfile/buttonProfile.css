@@ -1,0 +1,19 @@
+.buttonProfile {
+  border-radius: 60px;
+  border: 1px solid #057A47;
+  margin: 12px 18px;
+  font-size: 36px;
+  width: 260px;
+  transition: background 0.25s;
+}
+
+.accent:hover{
+  background: #057a473a;
+  border: none;
+  color: #383838;
+}
+
+.accent{
+  background: rgba(122, 5, 5, 0.00);
+}
+

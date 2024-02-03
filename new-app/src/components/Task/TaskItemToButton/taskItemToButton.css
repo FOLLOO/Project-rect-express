@@ -1,0 +1,16 @@
+.task-item-to-button{
+  background-color: #1F1F1F;
+  color: white;
+  border-radius: 30px;
+  border: none;
+  margin: 10px;
+   /* padding: 10px; */
+  /* font-size: 24px;
+  max-height: 60px; */ 
+  cursor: pointer;
+  width: -webkit-fill-available;
+  
+}
+.task-item-to-button:hover{
+  background-color: #3a3a3a;
+}

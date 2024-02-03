@@ -1,0 +1,16 @@
+.text-box {
+  border-radius: 60px;
+  border: 1px solid #057A47;
+  margin: 12px 3px;
+  font-size: 32px;
+  min-width: 550px;
+  height: 65px;
+  transition: background 0.25s;
+  background: #1D1E1D;
+  text-align: center;
+  color: white;
+
+  font-family: Comfortaa;
+}
+
+

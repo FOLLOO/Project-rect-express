@@ -1,0 +1,19 @@
+
+.buttonLogIn {
+  border-radius: 60px;
+  border: 1px solid #057A47;
+  background: none;
+  /* margin: 12px 18px; */
+  font-size: 32px;
+  font-weight: 700;
+  width: 240px;
+  height: 60px;
+  transition: background 0.25s;
+  cursor: pointer;
+}
+
+.buttonLogIn:hover{
+  background: #057a473a;
+  border: none;
+}
+

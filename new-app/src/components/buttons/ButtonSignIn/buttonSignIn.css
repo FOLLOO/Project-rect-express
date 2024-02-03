@@ -1,0 +1,18 @@
+.button-signIn {
+  border-radius: 60px;
+  font-size: 32px;
+  font-weight: 700;
+  width: 550px;
+  height: 65px;
+  transition: background 0.25s;
+  cursor: pointer;
+  background: #057A47;
+  border: none;
+  margin: 10px 0;
+}
+
+.button-signIn:hover{
+  background: #04633a;
+}
+
+

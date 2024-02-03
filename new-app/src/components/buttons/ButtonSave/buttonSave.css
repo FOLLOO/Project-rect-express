@@ -1,0 +1,20 @@
+.buttonSave {
+  border-radius: 60px;
+  border: 1px solid #057A47;
+  margin: 12px 0px;
+  font-size: 32px;
+  width: 500px;
+  height: 60px;
+  transition: background 0.25s;
+  background: none;
+}
+
+.buttonSave:hover{
+  background: #057a473a;
+  border: none;
+}
+
+/* .accent{
+  background: rgba(122, 5, 5, 0.00);
+} */
+

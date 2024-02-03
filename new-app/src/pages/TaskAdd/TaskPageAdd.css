@@ -1,0 +1,41 @@
+.rdw-editor-main{
+  background-color: #1F1F1F !important;
+  max-height: 300px;
+  min-height: 300px;
+  color: white;
+  padding: 10px;
+  border: 1px solid #057a473f !important;
+  border-radius: 30px !important;
+
+}
+.rdw-editor-toolbar{
+  background-color: #1F1F1F !important;
+  border: 1px solid #1F1F1F !important;
+}
+.rdw-editor-wrapper{
+  width: -webkit-fill-available;
+  padding: 10px;
+  
+}
+.item-dark-bg{
+  background: #1F1F1F;
+  border-radius: 60px;
+  border: none;
+  padding: 20px 30px;
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  align-items: center;
+}
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root input{
+  color: white;
+  font-family: 'Comfortaa';
+  font-size: 28px;
+}
+.css-1eed5fa-MuiInputBase-root-MuiInput-root::after{
+  border-bottom: 2px solid #057a47 !important;
+}
+h2{
+  color: white;
+}

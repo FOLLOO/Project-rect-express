@@ -1,0 +1,18 @@
+.time p {
+  font-size: 128px;
+  color: rgba(0, 0, 139, 0);
+  font-weight: 700;
+  margin: 0;
+  -webkit-text-stroke : 1px white;
+  text-shadow: -10px 10px 1px #057a478c;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.time{
+  position: absolute;
+  z-index: -1;
+  margin-left: 65%;
+  margin-top: 20%;
+}

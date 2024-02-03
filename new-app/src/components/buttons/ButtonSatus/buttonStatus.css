@@ -1,0 +1,20 @@
+.buttonStatus {
+  border-radius: 30px;
+  background: #057A47;
+  border: none;
+  color: white;
+  padding: 3px 1px;
+  height: 53px;
+  font-size: 28px;
+  width: 260px;
+  transition: background 0.25s;
+}
+
+.buttonStatus:hover{
+  background: rgba(5, 122, 71, 0.411);
+  border: none;
+  color: white;
+}
+
+
+

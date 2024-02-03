@@ -1,0 +1,18 @@
+.button-also-sign {
+  border-radius: 60px;
+  background:  #057A47B8;
+  margin: 12px 0px;
+  font-size: 32px;
+  width: 550px;
+  height: 65px;
+  font-weight: 700;
+  border: none;
+  transition: background 0.25s;
+}
+
+.button-also-sign:hover{
+  background: #057a473a;
+  border: none;
+}
+
+

@@ -1,6 +1,7 @@
-.buttonStatus {
+.buttonStatusTrue {
   border-radius: 30px;
   background: #057A47;
+  /* background: red; */
   border: none;
   color: white;
   padding: 3px 1px;
@@ -10,8 +11,26 @@
   transition: background 0.25s;
 }
 
-.buttonStatus:hover{
+.buttonStatusTrue:hover{
   background: rgba(5, 122, 71, 0.411);
+  border: none;
+  color: white;
+}
+
+.buttonStatusFalse {
+  border-radius: 30px;
+  background: #7A0505;
+  border: none;
+  color: white;
+  padding: 3px 1px;
+  height: 53px;
+  font-size: 28px;
+  width: 260px;
+  transition: background 0.25s;
+}
+
+.buttonStatusFalse:hover{
+  background: #7a050579;
   border: none;
   color: white;
 }

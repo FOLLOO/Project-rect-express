@@ -1,14 +1,21 @@
-import './buttonStatus.css';
+  import './buttonStatus.css';
+  import React, { useEffect } from 'react';
+
+  function ButtonSatus({Bstatus, onClick, status, disabled})
+  {
 
 
-function ButtonSatus()
-{
- return (
-  <>
-  <h4 className='status-h4'>Статус:</h4>
-  <button className='buttonStatus media-button'>Выполнено</button>
-  </>
- )
-}
+  return (
+    <>
+    <h4 className='status-h4'>Статус:</h4>
+    <button className={Bstatus || status ? "buttonStatusTrue buttonStatus" : "buttonStatusFalse buttonStatus"}
+    onClick={onClick}
+    disabled={disabled}
+        >
+          {Bstatus ? "Выполнено" : "Не выполнено"}
+        </button>
+    </>
+  )
+  }
 
-export default ButtonSatus;
+  export default ButtonSatus;

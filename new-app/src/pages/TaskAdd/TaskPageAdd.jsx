@@ -42,13 +42,13 @@ function TaskPageAdd() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
   const onSubmit = async () => {
-    console.log(title, convertToRaw(editorState.getCurrentContent()), dateEnd);
     try {
       setLoading(true);
       const fields = {
         title, 
         description: JSON.stringify(convertToRaw(editorState.getCurrentContent())),
         dateEnd: dayjs(dateEnd, 'DD.MM.YYYY').format('YYYY-MM-DD'),
+        status,
       }
 
       const { data } = isEdititng 
@@ -57,13 +57,13 @@ function TaskPageAdd() {
       
       const _id = isEdititng ? id : data._id;
 
+      setStatus(fields.status);
       navigate(`/task/${_id}`)
     } catch(err) {
       console.warn(err);
       alert('Ошибка при создании статьи')
     }
   }
-  let parsedBlocks = "";
   React.useEffect(() => {
     if(id) {
       axios.get(`/task/${id}`)
@@ -74,15 +74,20 @@ function TaskPageAdd() {
         setStatus(data.status)
 
         const contentState = convertFromRaw(JSON.parse(data.description));
-        // Установка нового editorState
         const newEditorState = EditorState.createWithContent(contentState);
         setEditorState(newEditorState);
       }).catch(err => {
         console.warn(err);
         alert('Ошибка пир получении статьи')
       })
+      .finally(() => {
+        setLoading(false);
+      });
     }
   }, [])
+
+
+
 
   if (!window.localStorage.getItem("token") && !isAuth){
    return <Navigate to="/"/>
@@ -135,7 +140,7 @@ function TaskPageAdd() {
                     },
                   }} />
            </LocalizationProvider>
-          <ButtonStatus/>
+           <ButtonStatus Bstatus={status} onClick={() => setStatus(prevStatus => !prevStatus)} />
           </div>
           <div className="item-dark-bg">
           <Editor

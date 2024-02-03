@@ -100,6 +100,7 @@ export const update = async (req, res) => {
       title: req.body.title,
       description: req.body.description,
       dateEnd: req.body.dateEnd,
+      status: req.body.status,
     // User request
     // Back request
       user: req.userId,

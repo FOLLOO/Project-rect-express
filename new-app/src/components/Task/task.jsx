@@ -69,7 +69,7 @@ return(
             <h2>{formateDate }</h2>
            <h2>Дата конца</h2>
            <h2>{formattedDateEnd}</h2>
-          <ButtonStatus/>
+          <ButtonStatus disabled={true} Bstatus={status}/>
           </div>
               <div className="item-dark-bg">
                   {parsedBlocks && (

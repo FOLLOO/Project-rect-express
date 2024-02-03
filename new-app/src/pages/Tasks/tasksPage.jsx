@@ -85,6 +85,7 @@ function TasksPage(){
                 description={isTasksLoading ? "..." : obj?.description}
                 date={obj?.dateEnd ? obj.dateEnd : null}
                 isOwner={userData ? userData._id === (obj?.user?._id || null) : null}
+                status={isTasksLoading ? "Задача грузится" : obj?.status}
               />
             </TaskItemToButton>
           

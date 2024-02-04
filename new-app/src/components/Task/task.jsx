@@ -3,8 +3,10 @@ import React from "react";
 
 import ButtonBack from "../../components/buttons/ButtonBack/buttonBack";
 import ButtonStatus from "../../components/buttons/ButtonSatus/buttonStatus"
-import ButtonEdit from "../../components/buttons/ButtonEdit/buttonEdit"
-import ButtonDelete from "../../components/buttons/ButtonDelete/buttonDelete"
+// import ButtonEdit from "../../components/buttons/ButtonEdit/buttonEdit"
+// import ButtonDelete from "../../components/buttons/ButtonDelete/buttonDelete"
+import "../buttons/ButtonDelete/buttonDelete.css"
+import "../buttons/ButtonEdit/buttonEdit.css"
 
 import moment from "moment";
 import { useDispatch } from "react-redux";
@@ -73,7 +75,7 @@ return(
           </div>
               <div className="item-dark-bg">
                   {parsedBlocks && (
-                  <div style={{ color: "white", fontSize: "24px"}}>
+                  <div style={{ color: "white", fontSize: "24px", overflow: "hidden", overflowWrap: "anywhere"}}>
                     {parsedBlocks}
                   </div>
                   )}

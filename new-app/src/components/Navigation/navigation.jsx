@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import './navigation.css'
 import '../../components/buttons/ButtonLogOut/buttonLogOut.css';
@@ -14,7 +14,7 @@ import ButtonMytasks from '../buttons/ButtonMyTasks/buttonMyTasks.jsx';
 
 
 
-function Navigation({value, onChange})
+function Navigation({value, onChange, stylee})
 {
   const dispatch = useDispatch();
   const isAuth = useSelector(SelectIsAuth);
@@ -26,9 +26,6 @@ function Navigation({value, onChange})
       window.localStorage.removeItem('token');
     }
   }
-
-    
-
 
     return (
       <nav>
@@ -45,6 +42,7 @@ function Navigation({value, onChange})
             placeholder={'Поиск'}
             value={value}
             onChange={onChange}
+            style={stylee}
             ></input>
       <ButtonMytasks/>
       <button className='buttonLogOut' onClick={onClickLogOut} >ВЫЙТИ</button>

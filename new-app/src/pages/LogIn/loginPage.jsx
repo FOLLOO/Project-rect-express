@@ -14,7 +14,6 @@ import Week from "../../components/Date/Week/week.jsx";
 import { useForm } from "react-hook-form";
 import '../../components/TextBox/textBox.css';
 import { SelectIsAuth, fetchAuth } from "../../redux/slice/auth.js";
-import { Cookie } from "@mui/icons-material";
 
 
 function LoginPage(){

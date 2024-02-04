@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import './MainPage.css';
 import Footer from "../components/Footer/footer";
@@ -14,10 +14,11 @@ function MainPage(){
 
   return(
     <div className="page">
-      <Navigation/>
+      <Navigation stylee={{visibility: "collapse"}}/>
       <Week styles={{ marginLeft: "55%", marginTop: "5%" }}/>
       <Time/>
-      <Month/>
+      <Month styles={{  marginLeft: "5%",
+  marginTop: "44%"}}/>
       <div className="content">
         <HelloMain/>
       </div>

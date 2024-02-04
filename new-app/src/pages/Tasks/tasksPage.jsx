@@ -19,7 +19,7 @@ import FFilter from "../../components/FFilter/ffilter.jsx";
 
 import { fetchTasks } from "../../redux/slice/tasks.js";
 import { SelectIsAuth } from "../../redux/slice/auth.js";
-import { EditorState, convertFromRaw } from "draft-js";
+// import { EditorState, convertFromRaw } from "draft-js";
 
 function TasksPage(){
   const isAuth = useSelector(SelectIsAuth);
@@ -27,7 +27,6 @@ function TasksPage(){
   const { tasks } = useSelector(state => state.tasks)
   const isTasksLoading = tasks.status === 'loading';
   const userData = useSelector((state) => state.auth.data)
-  const [data, setData] = React.useState([]);
 
 
 
@@ -76,7 +75,8 @@ function TasksPage(){
 
        <h4 className="glasses-h4" >Мои Задачи</h4>
         {/* Тут должен быть фильтер */}
-        <FFilter/>
+        {/* <FFilter/> */}
+        
          {filterTasks.map((obj, index) => (
           userData && obj && userData._id === (obj?.user?._id || null)) && (
             <TaskItemToButton key={index} _id={obj?._id}>

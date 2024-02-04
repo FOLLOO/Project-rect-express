@@ -35,6 +35,8 @@ function TasksPage(){
     dispatch(fetchTasks());
   }, []) ;
 
+
+
   const tasksPerPage = 5;
   const [currentPage, setCurrentPage] = useState(1);
   const handleChangePage = (event, newPage) => {
@@ -45,16 +47,19 @@ function TasksPage(){
   const filteredTasks = tasks.items.filter(obj =>
     userData && obj && userData._id === (obj?.user?._id || null)
   );
+  const [value, setValue] = useState('');
+
   const displayedTasks = isTasksLoading
-    ? [...Array(tasksPerPage)]
-    : filteredTasks.slice(startIndex, endIndex);
+  ? [...Array(tasksPerPage)]
+  : filteredTasks
+      .filter((item) => item.title.toLowerCase().includes(value.toLowerCase()))
+      .slice(startIndex, startIndex + tasksPerPage);
 
-    
-    const [value, setValue] = useState('');
 
-    const filterTasks = filteredTasks.filter(items => 
-      items.title.toLowerCase().includes(value.toLowerCase())
-      );
+    // const filterTasks = filteredTasks.filter(items => 
+    //   items.title.toLowerCase().includes(value.toLowerCase())
+      
+    //   );
     
     if(!window.localStorage.getItem("token") && !isAuth){
       return <Navigate to="/"/>
@@ -77,7 +82,7 @@ function TasksPage(){
         {/* Тут должен быть фильтер */}
         {/* <FFilter/> */}
         
-         {filterTasks.map((obj, index) => (
+         {displayedTasks.map((obj, index) => (
           userData && obj && userData._id === (obj?.user?._id || null)) && (
             <TaskItemToButton key={index} _id={obj?._id}>
               <TaskItem
